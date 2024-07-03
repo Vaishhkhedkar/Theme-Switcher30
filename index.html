@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Theme Changer</title>
+    <style>
+        .bg-dark {
+            background-color: #040404;
+            color: white;
+        }
+
+        .bg-light {
+            color: black;
+            background-color: #fefcfa;
+        }
+
+        .header-name {
+            text-align: center;
+            font-weight: bolder;
+            font-style: italic;
+        }
+
+        .img-front {
+            height: 800px;
+            width: 1500px;
+            display: block;
+            margin: 30px auto;
+        }
+
+        .btn-container {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+        }
+
+        .btn-img {
+            height: 30px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body class="bg-light" id="main-body">
+    <div class="btn-container">
+        <img src="./light.PNG" alt="light" class="btn-img" onclick="darkmode()">
+        <img src="./dark.PNG" alt="dark" class="btn-img" onclick="lightmode()">
+    </div>
+    <h1 class="header-name">Theme changer</h1>
+
+    <div class="img-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6q0ZuQJQ3B4r_lVV3Q9qTvMmwSoXcFNmd2w&s"  class="img-front" id="img-mode">
+    </div>
+
+    <script>
+        function lightmode() {
+            const dark = document.getElementById("img-mode")
+            dark.src = "https://img.freepik.com/free-vector/realistic-luxury-background_23-2149354608.jpg"
+
+            const bgdark = document.getElementById("main-body")
+            bgdark.classList.remove("bg-light")
+            bgdark.classList.add("bg-dark")
+        }
+        function darkmode() {
+            const light = document.getElementById("img-mode")
+            light.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6q0ZuQJQ3B4r_lVV3Q9qTvMmwSoXcFNmd2w&s"
+
+            const bglight = document.getElementById("main-body")
+            bglight.classList.remove("bg-dark")
+            bglight.classList.add("bg-light")
+        }
+    </script>
+</body>
+
+</html>
